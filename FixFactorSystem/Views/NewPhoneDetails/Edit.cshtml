@@ -1,0 +1,79 @@
+﻿@model FixFactorSystem.Models.NewPhoneDetails
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+   
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">تعديل مواصفات الهاتف</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+               النوع
+                    <input asp-for="MobName" class="form-control" />
+                    <span asp-validation-for="MobName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+               الرام
+                    <input asp-for="Ram" class="form-control" />
+                    <span asp-validation-for="Ram" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+              التخزين
+                    <input asp-for="Storage" class="form-control" />
+                    <span asp-validation-for="Storage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                الكاميرا
+                    <input asp-for="Camera" class="form-control" />
+                    <span asp-validation-for="Camera" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                 صورة
+                    <input type="file" name="File" asp-for="File" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                   اللون
+                    <input asp-for="Color" class="form-control" />
+                    <span asp-validation-for="Color" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                  الشاشه
+                    <input asp-for="Display" class="form-control" />
+                    <span asp-validation-for="Display" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                البطاريه
+                    <input asp-for="Battary" class="form-control" />
+                    <span asp-validation-for="Battary" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+              مواصفات اخرى
+                    <input asp-for="AddDetails" class="form-control" />
+                    <span asp-validation-for="AddDetails" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                السعر
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a style="color:blueviolet" asp-action="Index">عوده</a>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

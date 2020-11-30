@@ -1,0 +1,84 @@
+﻿@model FixFactorSystem.Models.UsedPhone
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="features" style="        font-family: “Droid Arabic Kufi”, serif;
+        color: #7c795d;
+        margin: 5px;
+        direction: rtl;
+        text-align: right;
+">
+        <div class="container">
+            <div class="feat" style=" float: right; width:50%">
+
+                <h1 style="        color: darkmagenta ;
+        text-align: right; direction: rtl;
+        margin: 10px;
+        font-weight: bold">
+                    تفاصيل
+                </h1>
+
+                <dl class="row" style=" direction:rtl; ">
+                    النوع
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MobNameu)
+                    </dd>
+                    <dt class="col-sm-2">
+                        الرام
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Ramu)
+                    </dd>
+                    <dt class="col-sm-2">
+                        التخزين
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Storageu)
+                    </dd>
+                    <dt class="col-sm-2">
+                        السعر
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Priceu)
+                    </dd>
+                </dl>
+            </div>
+            <div class="feat" style=" float: right; width:50%">
+                <dl>
+                    <dt class="col-sm-2">
+
+                    </dt>
+
+                    <dd class="col-sm-10">
+                        @if (Model.Imgu != null)
+                        {
+
+
+                            <img src="~/Mobimg/@Model.Imgu" style="width:300px; height:450px" />
+                        }
+            
+                    </dd>
+
+                </dl>
+            </div>
+            <div class="ff" style="margin-bottom:700px;">
+
+                <div>
+                    <a style="color:blueviolet" asp-action="Edit" asp-route-id="@Model.Idu">تعديل</a> |
+                    <a style="color:blueviolet" asp-action="Index">عودة</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+

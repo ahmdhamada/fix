@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FixFactorSystem.Models.Maintenence>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1 style="font-family: “Droid Arabic Kufi”, serif; text-align: center; margin-left: 100px; margin-top: 20px; font-weight: bold">طلب صيانة</h1>
+
+    <form class="c" style="margin-left: 590px;" asp-controller="Maintenences" asp-action="Create">
+
+        <input type="submit" value="اضافة" class="btn btn-primary" />
+    </form>
+    <table class="table table-hover table table-striped table-dark" table-active" style="direction:rtl;text-align:center">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                  نوع الهاتف
+                </th>
+                <th>
+                وصف العطل
+                </th>
+
+                <th>
+         اسم صاحب الطلب
+                </th>
+                <th>
+
+                    رقم هاتف صاحب الطلب
+                </th>
+
+
+                <th>
+                 صورة الهاتف
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DamMobName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DamageDescription)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneOwner)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+
+                    </td>
+                    <td>
+                        <img src="~/Mobimg/@item.DamImg" style="width:80px; height:80px" />
+                    </td>
+                    <td>
+                        <a style="color:darkorchid" asp-action="Edit" asp-route-id="@item.DamageId">تعديل</a> |
+                        <a style="color:darkorchid" asp-action="Details" asp-route-id="@item.DamageId">تفاصيل</a> |
+                        <a style="color:darkorchid" asp-action="Delete" asp-route-id="@item.DamageId">مسح</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

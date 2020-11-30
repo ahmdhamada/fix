@@ -1,0 +1,100 @@
+﻿@model IEnumerable<FixFactorSystem.Models.NewPhoneDetails>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1 style="font-family: “Droid Arabic Kufi”, serif; text-align: center; margin-left: 100px; margin-top: 20px; font-weight: bold">مواصفات الهاتف</h1>
+
+    <form class="c" style="margin-left: 590px;" asp-controller="NewPhoneDetails" asp-action="Create">
+
+        <input type="submit" value="اضافه" class="btn btn-primary" />
+    </form>
+
+    
+
+
+    <table class="table table-hover table table-striped table-dark" table-active" style="direction:rtl; margin:5px;">
+        <thead class="thead-dark" style="text-align:center; font-family: “Droid Arabic Kufi”, serif;">
+            <tr>
+                <th>
+                    النوع
+                </th>
+                <th>
+                    الرام
+                </th>
+                <th>
+                    التخزين
+                </th>
+                <th>
+                    الكاميرا
+                </th>
+
+                <th>
+                    اللون
+                </th>
+                <th>
+                    الشاشه
+                </th>
+                <th>
+                    البطاريه
+                </th>
+                <th>
+                    تفاصيل اخرى
+                </th>
+                <th>
+                    السعر
+                </th>
+                <th>
+                    صورة الجهاز
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ram)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Storage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Camera)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Display)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Battary) مللي أمبير
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price) جنيه
+                    </td>
+                    <td>
+                        <img src="~/Mobimg/@item.Image" style="width:80px; height:80px" />
+                    </td>
+                    <td>
+                        <a style="color:darkorchid" asp-action="Edit" asp-route-id="@item.Id">تعديل</a> |
+                        <a style="color:darkorchid" asp-action="Details" asp-route-id="@item.Id">تفاصيل</a> |
+                        <a style="color:darkorchid" asp-action="Delete" asp-route-id="@item.Id">مسح</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

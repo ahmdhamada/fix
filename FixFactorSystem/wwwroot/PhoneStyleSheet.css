@@ -1,0 +1,26 @@
+﻿body {
+
+    background-color:darkviolet;
+}
+.features {
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+    .features .title {
+        float: left;
+   text-decoration-color:blueviolet;
+        height: 150px;
+    }
+
+        .features .title h3 {
+            text-transform: uppercase;
+        }
+
+        .features .title form {
+            margin:5px;
+            float: left;
+        }
+
+

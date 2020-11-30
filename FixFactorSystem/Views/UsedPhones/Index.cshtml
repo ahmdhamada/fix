@@ -1,0 +1,79 @@
+﻿@model IEnumerable<FixFactorSystem.Models.UsedPhone>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/PhoneStyleSheet.css" rel="stylesheet" />
+
+<div class="m" style="  background-color: #c7e3f1;">
+    <div class="features">
+        <div class="container">
+            <div class="title">
+                <h1 style="font-family: “Droid Arabic Kufi”, serif;color:blueviolet; text-align: center; margin-left: 400px;">هواتف مستعمله</h1>
+
+                <form class="c"style="margin-left: 400px;" asp-controller="UsedPhones" asp-action="Create">
+
+                    <input type="submit" value="اضافه" class="btn btn-primary" />
+                </form>
+
+                <form class="d" asp-controller="UsedPhoneDetails" asp-action="Index">
+
+                    <input type="submit" value="مواصفات الهاتف" class="btn btn-block" />
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="crr">
+        <div class="container">
+            <div class="row" style="width: 87%; text-align:right">
+                @foreach (var item in Model)
+                {
+                    <div class="col-4">
+
+
+                        <div class="card bg-danger"style=" display:inline; height:500px;width:300px;float:left;margin:2px; ">
+                            <div class="card-img">
+                                <img class="card-img-top" style="height:250px;width:300px;" src="@("/Mobimg/" + item.Imgu)    ">
+                            </div>
+                            <div class="card-body" >
+                                <h5 class="card-title text-black" style=" color: white; font-weight:bold;">   @Html.DisplayFor(modelItem => item.MobNameu) :النوع</h5>
+                                <h5 class="card-text" style=" color: white; font-weight:bold;">     @Html.DisplayFor(modelItem => item.Ramu) :الرام</h5>
+                                <h5 class="card-text" style=" color: white; font-weight:bold;">       @Html.DisplayFor(modelItem => item.Storageu) :التخزين</h5>
+                                <h5 class="card-text" style=" color: white; font-weight:bold;">  السعر           @Html.DisplayFor(modelItem => item.Priceu) جنيه</h5>
+
+
+                             
+
+                                <!--   <a asp-controller="NewPhoneDetails"
+                                asp-action="Index"> Details</a>-->
+                                <tr>
+                                    <td>
+                                        <a  asp-action="Edit" asp-route-id="@item.Idu">تعديل</a> |
+                                        <a  asp-action="Details" asp-route-id="@item.Idu">تفاصيل</a> |
+                                        <a  asp-action="Delete" asp-route-id="@item.Idu">مسح</a>
+                                    </td>
+                                </tr>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+

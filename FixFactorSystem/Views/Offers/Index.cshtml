@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FixFactorSystem.Models.Offers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <h1 style="font-family: “Droid Arabic Kufi”, serif; text-align: center; margin-left: 100px; margin-top: 20px; font-weight: bold">عروض و مميزات</h1>
+
+    <a style="margin-bottom:5px; margin-left: 590px;" asp-action="Create"><button class="btn btn-primary">اضافة</button></a>
+
+
+
+
+    <table class="table table-hover table table-striped table-bordered" table-active" style="direction:rtl; margin:5px; text-align:center">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                 العرض
+                </th>
+                <th>
+               تفاصيل العرض
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Details)
+                    </td>
+                    <td>
+                        <a style="color:darkorchid" asp-action="Edit" asp-route-id="@item.OfferId">تعديل</a> |
+                        <a style="color:darkorchid" asp-action="Details" asp-route-id="@item.OfferId">تفاصيل</a> |
+                        <a style="color:darkorchid" asp-action="Delete" asp-route-id="@item.OfferId">مسح</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="feat" style="margin-top:100px; margin-left:200px;">
+        <img src="~/Mobimg/wes.jpg" style="width:750px;height:450px" />
+    </div>
+</div>

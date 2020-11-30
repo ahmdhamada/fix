@@ -1,0 +1,90 @@
+﻿@model FixFactorSystem.Models.UsedPhoneDetails
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">مسح الهاتف</h2>
+    <h3>هل تريد مسح الهاتف</h3>
+    <div>
+     
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                النوع
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MobNameu)
+            </dd>
+            <dt class="col-sm-2">
+                الرام
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ramu)
+            </dd>
+            <dt class="col-sm-2">
+                التخزين
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storageu)
+            </dd>
+            <dt class="col-sm-2">
+                الكاميرا
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Camerau)
+            </dd>
+
+            <dt class="col-sm-2">
+                اللون
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Color)
+            </dd>
+            <dt class="col-sm-2">
+                الشاشه
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Display)
+            </dd>
+            <dt class="col-sm-2">
+                البطاريه
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Battary)
+            </dd>
+            <dt class="col-sm-2">
+                مواصفات اخرى
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.AddDetails)
+            </dd>
+            <dt class="col-sm-2">
+                السعر
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Imgu != null)
+                {
+
+
+                    <img src="~/Mobimg/@Model.Imgu" style="width:300px; height:450px" />
+                }
+
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Idu" />
+            <input type="submit" value="مسح" class="btn btn-danger" /> |
+            <a asp-action="Index">عودة</a>
+        </form>
+    </div>
+</div>

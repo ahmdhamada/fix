@@ -1,0 +1,43 @@
+﻿@model FixFactorSystem.Models.Offers
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">اضافة عرض</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                 العرض
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                 تفاصيل العرض
+                    <input asp-for="Details" class="form-control" />
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="اضافة" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="feat" style="margin-top:100px; margin-left:200px;">
+        <img src="~/Mobimg/wes.jpg" style="width:750px;height:450px" />
+    </div>
+    <div>
+        <a asp-action="Index">عودة</a>
+    </div>
+</div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

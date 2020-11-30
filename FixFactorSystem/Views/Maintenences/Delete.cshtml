@@ -1,0 +1,60 @@
+﻿@model FixFactorSystem.Models.Maintenence
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">مسح الطلب</h2>
+    <h3>هل تريد مسح الهاتف</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                نوع الهاتف
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DamMobName)
+            </dd>
+            <dt class="col-sm-2">
+                وصف العطل
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DamageDescription)
+            </dd>
+
+            <dt class="col-sm-2">
+                اسم صاحب العطل
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PhoneOwner)
+            </dd>
+            <dt class="col-sm-2">
+                رقم هاتفه
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt class="col-sm-2">
+
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.DamImg != null)
+                {
+
+
+                    <img src="~/Mobimg/@Model.DamImg" style="width:300px; height:450px" />
+                }
+
+            </dd>
+
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="DamageId" />
+            <input type="submit" value="مسح" class="btn btn-danger" /> |
+            <a asp-action="Index">عودة</a>
+        </form>
+    </div>
+    </div>

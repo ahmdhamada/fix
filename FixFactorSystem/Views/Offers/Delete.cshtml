@@ -1,0 +1,38 @@
+﻿@model FixFactorSystem.Models.Offers
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">مسح العرض</h2>
+    <h3>هل تريد مسح العرض</h3>
+    
+        <div>
+         
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+             العرض
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-2">
+             وصف العرض
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Details)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="OfferId" />
+                <input type="submit" value="مسح" class="btn btn-danger" /> |
+                <a asp-action="Index">عودة</a>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,56 @@
+﻿@model FixFactorSystem.Models.NewPhone
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container">
+   
+
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">اضافة هاتف جديد</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                  النوع
+                    <input asp-for="MobName" class="form-control" />
+                    <span asp-validation-for="MobName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                  الرام
+                    <input asp-for="Ram" class="form-control" />
+                    <span asp-validation-for="Ram" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                 التخزين
+                    <input asp-for="Storage" class="form-control" />
+                    <span asp-validation-for="Storage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+             السعر
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                  الصوره
+                    <input type="file" name="File" asp-for="File" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="اضافه" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div >
+        <a style="color:blueviolet" asp-action="Index">عوده</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

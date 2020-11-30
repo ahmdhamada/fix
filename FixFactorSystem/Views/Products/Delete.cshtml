@@ -1,0 +1,52 @@
+﻿@model FixFactorSystem.Models.Products
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">مسح المنتج</h2>
+    <h3>هل تريد مسح المنتج</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                اسم المنتج
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>
+            <dt class="col-sm-2">
+                وصف المنتج
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Details)
+            </dd>
+
+            <dt class="col-sm-2">
+                السعر
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Img != null)
+                {
+
+
+                    <img src="~/Mobimg/@Model.Img" style="width:300px; height:450px" />
+                }
+
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ProductId" />
+            <input type="submit" value="مسح" class="btn btn-danger" /> |
+            <a asp-action="Index">عودة</a>
+        </form>
+    </div>
+</div>

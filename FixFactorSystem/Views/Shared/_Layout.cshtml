@@ -1,0 +1,221 @@
+﻿<!
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Site Metas -->
+<title>FixFactor - Mobile Shop</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<head>
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
+    <link rel="preload" href="~/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/style.css">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="~/css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/custom.css">
+    <link rel="stylesheet" href="~/fonts/DroidKufi-Bold.ttf">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="app_version" data-spy="scroll" data-target="#navbarApp" data-offset="98">
+
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+        <img class="preloader" src="~/images/loaders/loader-app.gif" alt="">
+    </div> end loader -->
+    <!-- END LOADER -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="left-soi">
+                        <ul>
+                            <li class="social-links"><a href="#"><i class="fa fa-apple"></i></a></li>
+                            <li class="social-links"><a href="#"><i class="fa fa-android"></i></a></li>
+                            <li class="social-links"><a href="#"><i class="fa fa-windows"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="right-btn">
+                        <a href="#" class="btn-radius btn-brd">Get Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header header_style_01">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="~/images/logos/heroo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
+                    <ul class="navbar-nav">
+
+
+                        <li><a class="nav-link" asp-controller="Home" asp-action="Index">الرئيسيه</a></li>
+                        <li><a class="nav-link" asp-controller="NewPhones" asp-action="Index">جديد</a></li>
+                        <li><a class="nav-link" asp-controller="UsedPhones" asp-action="Index">مستعمل</a></li>
+                        <li><a class="nav-link" asp-controller="Maintenences" asp-action="Index">طلب صيانه</a></li>
+                        <li><a class="nav-link" asp-controller="Offers" asp-action="Index">عروض مميزه</a></li>
+                        <li><a class="nav-link" asp-controller="Products" asp-action="Index">اكسسوارات</a></li>
+                        <li><a class="nav-link" asp-controller="AboutController1" asp-action="Index">عن الموقع</a></li>
+                        <li><a class="nav-link" asp-controller="AboutController1" asp-action="Contactus">اتصل بنا</a></li>
+               
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <partial name="_LoginPartial" />
+
+            </div>
+
+        </nav>
+    </header>
+
+    <div id="home" class="parallax first-section" style="background-image: url('/uploads/bg-img.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="big-tagline">
+                        <h2>مركز بيع و صيانة الهواتف المحموله</h2>
+                        <p class="lead">بيع و صيانة الهواتف المحموله الجديده و المستعمله و جميع قطع الغيار بأسعار مميزه</p>
+                        <a data-scroll href="https://www.facebook.com/fixfactor.ff/" class="btn btn-light btn-radius btn-brd"><i class="fa fa-play" aria-hidden="true"></i> Facebook </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!--<a data-scroll href="#screenshots" class="btn btn-light btn-radius btn-brd"><i class="fa fa-apple" aria-hidden="true"></i> App Store</a>-->
+                    </div>
+                </div>
+                <div class="app_iphone_01 wow slideInUp hidden-xs hidden-sm" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <img src="~/uploads/mido4.png" alt="" class="img-fluid">
+                </div>
+                <div class="app_iphone_02 wow slideInUp hidden-xs hidden-sm" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <img src="~/uploads/mooo.jpg" alt="" class="img-fluid">
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+   
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                           
+                            <small>Fix Factor</small>
+                        </div>
+                       
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <li><a href="mailto:#">enghamadafci99@gmail.com</a></li>
+                        
+                            <li>01127585863</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="footer-distributed widget clearfix">
+                        <div class="widget-title">
+                            <h3>Fix Factor</h3>
+                           
+                        </div>
+                        <div class="footer-right">
+                          
+                        </div>
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+                <div class="col-lg-2 col-md-6 col-sm-12 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Social</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="https://www.facebook.com/fixfactor.ff/about"><i class="fa fa-facebook"></i> Facebook</a></li>
+                           
+                            <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i> Dribbble</a></li>
+                     
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name">
+                        All Rights Reserved. &copy; 2020 <a href="https://www.facebook.com/TecHNoloOoOoGY.Coder/">ِAhmed HaMada</a>
+                   
+                    </p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/zenith.js"></script>
+    <script>
+        $('#default').zenith({
+            layout: 'default',
+            slideSpeed: 450,
+            autoplaySpeed: 2000
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿@model FixFactorSystem.Models.Offers
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="features" style="        font-family: “Droid Arabic Kufi”, serif;
+        color: #7c795d;
+        margin: 5px;
+        direction: rtl;
+        text-align: right;
+">
+    <div class="container">
+        <div class="feat" style=" float: right; width:50%">
+
+            <h1 style="        color: darkmagenta ;
+        text-align: right; direction: rtl;
+        margin: 10px;
+
+        font-weight: bold">
+                تفاصيل
+            </h1>
+
+            <dl class="row" style=" direction:rtl; ">
+                <dt class="col-sm-2">
+                    اسم العرض
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-2">
+                    تفاصيل 
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Details)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="feat" style="  margin-top:50px; margin-left:200px;">
+            <img src="~/Mobimg/wes.jpg" style="width:750px;height:450px" />
+        </div>
+        <div class="ff" style=" margin-right:250px; margin-bottom:10px;">
+            <div>
+                <a style="color:blueviolet;"; asp-action="Edit" asp-route-id="@Model.OfferId">تعديل</a> |
+                <a style="color:blueviolet;" asp-action="Index">عودة</a>
+            </div>
+        </div>
+    </div>
+    </div>

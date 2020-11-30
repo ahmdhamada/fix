@@ -1,0 +1,54 @@
+﻿@model FixFactorSystem.Models.UsedPhone
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">تعديل مواصفات هاتف مستعمل</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Idu" />
+                <div class="form-group">
+                النوع
+                    <input asp-for="MobNameu" class="form-control" />
+                    <span asp-validation-for="MobNameu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                الرام
+                    <input asp-for="Ramu" class="form-control" />
+                    <span asp-validation-for="Ramu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                 التخزين
+                    <input asp-for="Storageu" class="form-control" />
+                    <span asp-validation-for="Storageu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+               السعر
+                    <input asp-for="Priceu" class="form-control" />
+                    <span asp-validation-for="Priceu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+               صورة
+                    <input type="file" name="File" asp-for="File" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a style="color:blueviolet" asp-action="Index">عودة</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

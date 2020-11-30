@@ -1,0 +1,96 @@
+﻿@model IEnumerable<FixFactorSystem.Models.UsedPhoneDetails>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1 style="font-family: “Droid Arabic Kufi”, serif; text-align: center; margin-left: 100px; margin-top: 20px; font-weight: bold">مواصفات الهاتف</h1>
+
+    <form class="c"   style="margin-left: 590px;"asp-controller="UsedPhoneDetails" asp-action="Create">
+
+        <input type="submit" value="اضافة" class="btn btn-primary" />
+    </form>
+
+
+    <table class="table table-hover table table-striped table-dark" table-active" style="direction:rtl; margin:5px;">
+        <thead class="thead-dark"  style="text-align:center; font-family: “Droid Arabic Kufi”, serif;">
+            <tr>
+                <th>
+             النوع
+                </th>
+                <th>
+           الرام
+                </th>
+                <th>
+          التخزين
+                </th>
+                <th>
+               الكاميرا
+                </th>
+                <th>
+                 الصورة
+                </th>
+                <th>
+                اللون
+                </th>
+                <th>
+                 الشاشة
+                </th>
+                <th>
+              البطارية
+                </th>
+                <th>
+           مواصفات اخرى
+                </th>
+                <th>
+                  السعر
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobNameu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ramu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Storageu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Camerau)
+                    </td>
+                    <td>
+                        <img src="~/Mobimg/@item.Imgu" style="width:80px; height:80px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Display)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Battary) مللي أمبير
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price) جنيه
+                    </td>
+                    <td>
+                        <a style="color:darkorchid" asp-action="Edit" asp-route-id="@item.Idu">Edit</a> |
+                        <a style="color:darkorchid" asp-action="Details" asp-route-id="@item.Idu">Details</a> |
+                        <a style="color:darkorchid" asp-action="Delete" asp-route-id="@item.Idu">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

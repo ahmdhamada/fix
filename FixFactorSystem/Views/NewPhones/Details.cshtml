@@ -1,0 +1,96 @@
+﻿@model FixFactorSystem.Models.NewPhone
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="features" style="        font-family: “Droid Arabic Kufi”, serif;
+        color: #7c795d;
+        margin: 5px;
+        direction: rtl;
+        text-align: right;
+">
+    <div class="container">
+        <div class="feat" style=" float: right; width:50%">
+
+            <h1 style="        color: darkmagenta ;
+        text-align: right; direction: rtl;
+        margin: 10px;
+        font-weight: bold">
+                تفاصيل
+            </h1>
+
+            <dl class="row" style=" direction:rtl; ">
+                <dt class="col-sm-2">
+                    اسم الهاتف
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.MobName)
+                </dd>
+                <dt class="col-sm-2">
+                    رام
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Ram)
+                </dd>
+                <dt class="col-sm-2">
+                    التخزين
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Storage)
+                </dd>
+                <dt class="col-sm-2">
+                    السعر
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Price) جنيه
+                </dd>
+
+
+            </dl>
+        </div>
+        <div class="feat" style=" float: right; width:50%">
+            <dl>
+                <dt class="col-sm-2">
+                  
+                </dt>
+                <dd>
+                    @if (Model.Image != null)
+                    {
+
+
+                        <img src="~/Mobimg/@Model.Image" style="width:300px; height:450px" />
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <div class="ff" style="margin-bottom:700px;">
+
+            <div>
+                <a style="color:blueviolet" asp-action="Edit" asp-route-id="@Model.Id">تعديل </a> |
+                <a style="color:blueviolet" asp-action="Index">رجوع</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+  

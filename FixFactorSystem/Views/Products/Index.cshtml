@@ -1,0 +1,81 @@
+﻿@model IEnumerable<FixFactorSystem.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/PhoneStyleSheet.css" rel="stylesheet" />
+
+<div class="m" style=" background-color: #eaebf9">
+    <div class="features">
+        <div class="container">
+            <div class="title">
+                <h1 style="font-family: “Droid Arabic Kufi”, serif;color:blueviolet; text-align: center; margin-left: 400px;" >اكسسوارات</h1>
+
+                <form class="c"style="margin-left: 400px;"  asp-controller="Products" asp-action="Create">
+
+                    <input type="submit" value="اضافة منتج" class="btn btn-primary" />
+                </form>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="crr">
+        <div class="container">
+            <div class="row"  style="width: 87%; text-align:right">
+
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-4">
+
+
+                        <div class="card bg-primary" style="height:500px;width:300px;float:left; margin:2px; ">
+                            <div class="card-img">
+                                <img class="card-img-top" style="height:250px;width:300px;" src="@("/Mobimg/" + item.Img)    ">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-black" style=" color: white; font-weight:bold;">  اسم المنتج:   @Html.DisplayFor(modelItem => item.ProductName) </h5>
+                                <h5 class="card-text" style=" color: white; font-weight:bold;">    وصف المنتج:   @Html.DisplayFor(modelItem => item.Details) </h5>
+                               
+                                <h5 class="card-text" style=" color: white; font-weight:bold;">        السعر :  @Html.DisplayFor(modelItem => item.Price) جنيه</h5>
+
+
+                                s
+
+                                <!--   <a asp-controller="NewPhoneDetails"
+                                asp-action="Index"> Details</a>-->
+                                <tr>
+                                    <td>
+                                        <a style="color:brown"  asp-action="Edit" asp-route-id="@item.ProductId">تعديل</a> |
+                                        <a style="color:brown"  asp-action="Details" asp-route-id="@item.ProductId">تفاصيل</a> |
+                                        <a style="color:brown"  asp-action="Delete" asp-route-id="@item.ProductId">مسح</a>
+                                    </td>
+                                </tr>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+﻿@model FixFactorSystem.Models.Maintenence
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="ab" >
+    <div class="container" >
+        <div class="feet" style="margin-bottom: 200px;">
+         
+            <h2 style="color:blueviolet; margin:20px;font-weight:bold">ارسال طلب صيانة للهاتف</h2>
+            <hr />
+            <div class="row" style=" float:left; width:62%">
+                <div class="col-md-4">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                        نوع الهاتف
+                            <input asp-for="DamMobName" class="form-control" />
+                            <span asp-validation-for="DamMobName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                     وصف العطل
+                            <input asp-for="DamageDescription" class="form-control" />
+                            <span asp-validation-for="DamageDescription" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+             اسم صاحب العطل
+                            <input asp-for="PhoneOwner" class="form-control" />
+                            <span asp-validation-for="PhoneOwner" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                         رقم هاتف صاحب العطل
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                           صورة العطل
+                            <input type="file" name="File" asp-for="File" class="form-control" />
+                            <span asp-validation-for="File" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="ارسل الطلب" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="feat">
+                <img src="~/Mobimg/mhl.jpg" style="width:450px;height:350px" />
+            </div>
+
+        </div>
+        <div>
+            <a style="color:blueviolet" asp-action="Index">عودة</a>
+        </div>
+    </div>
+      
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

@@ -1,0 +1,57 @@
+﻿@model FixFactorSystem.Models.NewPhone
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container">
+    <h2 style="color:blueviolet; margin:20px;font-weight:bold">مسح الهاتف</h2>
+    <h3>هل تريد مسح الهاتف</h3>
+    <div>
+       
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+          النوع
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MobName)
+            </dd>
+            <dt class="col-sm-2">
+         الرام
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ram)
+            </dd>
+            <dt class="col-sm-2">
+      التخزين
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage)
+            </dd>
+            <dt class="col-sm-2">
+             السعر
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+     
+            </dt>
+            <dd class="col-sm-10">
+                @if (Model.Image != null)
+                {
+
+
+                    <img src="~/Mobimg/@Model.Image" style="width:300px; height:450px" />
+                }
+
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="مسح" class="btn btn-danger" /> |
+            <a asp-action="Index">عوده</a>
+        </form>
+    </div>
+</div>
